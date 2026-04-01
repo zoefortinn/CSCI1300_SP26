@@ -9,7 +9,36 @@ struct Student {
 };
 
 void saveAndLoad() {
+
+    //making an object
     Student s1; 
+    
+    // Getting the Scores
+    cout << "What's your student's name?" << endl;
+    cin >> s1.name;
+
+    cout << "What's your student's score?" << endl;
+    cin >> s1.score;
+
+    
+    //Writing to the file
+    ofstream outFile("student.txt");
+    //Write the name and score to the file
+    outFile << s1.name << " " << s1.score << endl;
+    // Close the File
+    outfile.close();
+
+    //Open the ifstream
+    ifstream inFile("student.txt");
+    Student s2;
+
+    inFile >> s2.name >> s2.score
+    cout << s2.name << " scored " << s2.score << endl;
+    inFile.close();
+
+    }
+    
+    
     // TODO 1: Ask the user for the student's name and score (use cin) to initialize struct members
 
     // TODO 2: Open an ofstream to "student.txt"
